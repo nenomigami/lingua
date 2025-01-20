@@ -18,16 +18,14 @@ set -e
 start_time=$(date +%s)
 
 # Get the current date
-current_date=$(date +%y%m%d)
+# current_date=$(date +%y%m%d)
 
 # Create environment name with the current date
-env_prefix=lingua_$current_date
+# env_prefix=lingua_$current_date
 
-# Create the conda environment
-
-source $CONDA_ROOT/etc/profile.d/conda.sh
-conda create -n $env_prefix python=3.11 -y -c anaconda
-conda activate $env_prefix
+# Create the venv environment
+# python -m venv $env_prefix
+# source $env_prefix/bin/activate
 
 echo "Currently in env $(which python)"
 
@@ -46,5 +44,3 @@ elapsed_time=$((end_time - start_time))
 elapsed_minutes=$((elapsed_time / 60))
 
 echo "Environment $env_prefix created and all packages installed successfully in $elapsed_minutes minutes!"
-
-

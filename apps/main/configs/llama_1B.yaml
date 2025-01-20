@@ -36,8 +36,8 @@ data:
   add_bos: true
   add_eos: true
   tokenizer:
-    name: tiktoken
-    path: tokenizers/cl_toplang_128k.tiktoken
+    name: sp
+    path: tokenizers/tokenizer.model
 
 profiling:
   run: true

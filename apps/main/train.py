@@ -75,7 +75,7 @@ logger = logging.getLogger()
 @dataclass
 class TrainArgs:
     name: str = "lingua"
-    dump_dir: str = ""
+    dump_dir: str = "./output"
 
     seed: int = 42
 
@@ -137,7 +137,7 @@ def validate_train_args(args: TrainArgs, output_size: int):
     assert args.dump_dir, "Dump dir not set"
 
     if args.checkpoint.path is None:
-        logger.info(f"Setting checkpoint path to {str(Path(args.dump_dir) / "checkpoints")}")
+        logger.info(f"Setting checkpoint path to {str(Path(args.dump_dir) / 'checkpoints')}")
         args.checkpoint.path = str(Path(args.dump_dir) / "checkpoints")
 
     for source in args.data.sources:
